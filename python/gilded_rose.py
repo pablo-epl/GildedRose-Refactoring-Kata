@@ -65,11 +65,11 @@ class GildedRose(object):
 
     def update_backstage_passes_quality(self, item):
         self.increase_quality(item)
-        if item.sell_in <= self.BACKSTAGE_PASSES_DOUBLE_QUALITY_INCREASE_SELL_IN_THRESHOLD:
+        if item.sell_in < self.BACKSTAGE_PASSES_DOUBLE_QUALITY_INCREASE_SELL_IN_THRESHOLD:
             self.increase_quality(item)
-        if item.sell_in <= self.BACKSTAGE_PASSES_TRIPLE_QUALITY_INCREASE_SELL_IN_THRESHOLD:
+        if item.sell_in < self.BACKSTAGE_PASSES_TRIPLE_QUALITY_INCREASE_SELL_IN_THRESHOLD:
             self.increase_quality(item)
-        if item.sell_in <= self.BACKSTAGE_PASSES_QUALITY_RESET_SELL_IN_THRESHOLD:
+        if item.sell_in < self.BACKSTAGE_PASSES_QUALITY_RESET_SELL_IN_THRESHOLD:
             self.reset_quality(item)
 
     def update_default_item_quality(self, item):
