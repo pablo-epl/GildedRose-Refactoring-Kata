@@ -2,9 +2,10 @@
 from __future__ import print_function
 
 from gilded_rose import *
-
+from item import Item
+from updatable_item_factory import UpdatableItemFactory
 if __name__ == "__main__":
-    print ("OMGHAI!")
+    print("OMGHAI!")
     items = [
              Item(name="+5 Dexterity Vest", sell_in=10, quality=20),
              Item(name="Aged Brie", sell_in=2, quality=0),
@@ -16,7 +17,7 @@ if __name__ == "__main__":
              Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=49),
              Item(name="Conjured Mana Cake", sell_in=3, quality=6),  # <-- :O
             ]
-
+    items = [UpdatableItemFactory.based_on(item) for item in items]
     days = 2
     import sys
     if len(sys.argv) > 1:
